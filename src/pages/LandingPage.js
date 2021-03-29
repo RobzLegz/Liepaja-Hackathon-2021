@@ -10,15 +10,17 @@ import SendEmailPopup from "../landingPagePopup/SendEmailPopup";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import CloseIcon from "@material-ui/icons/Close";
 import Regulations from "../popups/Regulations";
+import TutorialPopup from "../popups/TutorialPopup";
 
 function LandingPage({
   gameStarted,
   startFlagged,
   setRulePopupState,
   rulePopupState,
+  tutorialPopupState,
+  setTutorialPopupState,
 }) {
   const [showModal, setShowModal] = useState(false);
-  const [showRegulations, setShowRegulations] = useState(false);
   const [firstnewsState, setFirstNewsState] = useState(false);
   const [secondNewsState, setSecondNewsState] = useState(false);
   const [thirdnewsState, setThirdNewsState] = useState(false);
@@ -63,9 +65,12 @@ function LandingPage({
           <Regulations setRulePopupState={setRulePopupState} />
         )}
         {gameStarted && (
-          <p id="noteikumi__button" onClick={() => setRulePopupState(true)}>
+          <p id="noteikumi__button" onClick={() => setTutorialPopupState(true)}>
             Aplikācijas Instrukcija
           </p>
+        )}
+        {tutorialPopupState && (
+          <TutorialPopup setTutorialPopupState={setTutorialPopupState} />
         )}
 
         {!showModal && (

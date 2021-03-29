@@ -30,7 +30,7 @@ const StyledTutorialPopup = styled.div`
   width: 100%;
   height: 100vh;
   background: #f5f5f5;
-  z-index: 100;
+  z-index: 1000;
   padding-top: 40px;
   > h3 {
     color: #3f3f3f;

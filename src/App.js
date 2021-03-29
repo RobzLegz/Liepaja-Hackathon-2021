@@ -384,6 +384,8 @@ function App() {
                 <>
                   {userInfo && (
                     <LandingPage
+                      tutorialPopupState={tutorialPopupState}
+                      setTutorialPopupState={setTutorialPopupState}
                       setRulePopupState={setRulePopupState}
                       rulePopupState={rulePopupState}
                       startFlagged={userInfo.startFlagged}
