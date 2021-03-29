@@ -360,7 +360,7 @@ function TestMap({
         </>
       ) : (
         <StyledNoLocation>
-          <p>Lūdzu atļujiet Jūsu atrašanās vietas noteikšanu</p>
+          <p>Lūdzu atļaujiet Jūsu atrašanās vietas noteikšanu</p>
         </StyledNoLocation>
       )}
     </>
