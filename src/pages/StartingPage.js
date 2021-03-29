@@ -42,8 +42,23 @@ function StartingPage({
           </button>
         </div>
       </div>
+      {tutorialPopupState && (
+        <div className="tutorial__container">
+          <h3>Spēles instrukcija</h3>
+          <div className="video__container">
+            <iframe width="100%" height="200px" src="https://www.youtube.com/embed/6Q4KVKaVv9s" title="Instrukcija" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <button onClick={() => setTutorialPopupState(false)}>Aizvērt</button>
+        </div>
+      )}      
       <p id="noteikumi" onClick={() => setAboutGameState(true)}>
         Par spēli
+      </p>
+      <p
+        id="noteikumi"
+        onClick={() => setTutorialPopupState(true)}
+      >
+        Spēles Instrukcija
       </p>
       {aboutGameState && <AboutGame setAboutGameState={setAboutGameState} />}
     </StyledLandingPage>
@@ -60,6 +75,37 @@ const StyledLandingPage = styled.div`
   align-items: center;
   overflow: hidden;
   padding: 1rem 0;
+
+  >.tutorial__container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;    
+    background: #f5f5f5;
+    z-index: 100;
+    padding-top: 40px;
+    >h3{
+      color: #3f3f3f;
+      font-size: 30px;
+    }
+    >.video__container{
+      margin-top: 100px;
+      width: 100%;
+    }
+    >button{
+      margin-top: 20px;
+      background: #0f0f0f;
+      color: #f5f5f5;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  }
 
   img {
     height: 130px;
@@ -100,6 +146,12 @@ const StyledLandingPage = styled.div`
       100% {
         background-position: 0% 50%;
       }
+    }
+  }
+
+  @media (max-height: 569px) {
+    #buttons {
+      margin-top: -20px;
     }
   }
 
@@ -321,6 +373,9 @@ const StyledLandingPage = styled.div`
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
     position: relative;
     overflow: hidden;
+    @media (max-height: 569px) {
+      margin-top: 20px;
+    }
   }
   #noteikumi:before {
     content: "";
