@@ -9,7 +9,6 @@ function Regulations({setRulePopupState}) {
             <CancelIcon onClick={() => setRulePopupState(false)} />
             <div className="heading__section">
                 <h2>Noteikumi</h2>
-                <GavelIcon />
             </div>
             <ul>
                 <li><p>0. Spēlētājam ir pieejamas divas kartes - viena, lai pārredzētu visus objektus - otra lai redzētu pieejamos objektus redzamības zonā.</p></li>
@@ -32,6 +31,7 @@ const StyledRegulationsPopup = styled.div`
     left: 0;
     width: 100%;
     height: fit-content;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     background: #f5f5f5;
@@ -51,9 +51,6 @@ const StyledRegulationsPopup = styled.div`
         align-items: center;
         justify-content:center;
         margin-bottom:20px;
-        >.MuiSvgIcon-root {
-            margin-left: 10px;
-        }
     }
     >ul{
         list-style: none;

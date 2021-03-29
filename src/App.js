@@ -58,6 +58,7 @@ function App() {
   const [value, setValue] = useState(0);
   const [aboutGameState, setAboutGameState] = useState(false);
   const [rulePopupState, setRulePopupState] = useState(false);
+  const [tutorialPopupState, setTutorialPopupState] = useState(false);
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
 
@@ -222,6 +223,8 @@ function App() {
             </Route>
             <Route path="/">
               <StartingPage
+                tutorialPopupState={tutorialPopupState}
+                setTutorialPopupState={setTutorialPopupState}
                 setAboutGameState={setAboutGameState}
                 aboutGameState={aboutGameState}
               />

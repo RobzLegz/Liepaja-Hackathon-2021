@@ -61,6 +61,9 @@ function LandingPage({
         {rulePopupState && (
           <Regulations setRulePopupState={setRulePopupState} />
         )}
+        <p id="noteikumi__button" onClick={() => setRulePopupState(true)}>
+          Aplikācijas Instrukcija
+        </p>
         {!showModal && (
           <>
             {!gameStarted && (

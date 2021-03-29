@@ -86,35 +86,14 @@ function FinishPage({ setGameEnded, value, objects, wentObjects, userInfo }) {
           <p>Kopā Jūs apskatījāt {objects.length} objektus</p>
         </div>
         <div className="option__container">
+          <p>Kopā Jūs ieguvāt {value} punktus</p>
+        </div>
+        <div className="option__container">
           <p>
             Ceļā Jūs pavadījāt {Math.floor(value / 60)}:
-            {Math.floor(value / 60) === 0
-              ? value < 10
-                ? "0" + value
-                : value
-              : Math.floor(value / 60) === 1
-              ? value - 60 < 10
-                ? "0" + value - 60
-                : value - 60
-              : Math.floor(value / 60) === 2
-              ? value - 120 < 10
-                ? "0" + value - 120
-                : value - 120
-              : Math.floor(value / 60) === 3
-              ? value - 180 < 10
-                ? "0" + value - 180
-                : value - 180
-              : Math.floor(value / 60) === 4
-              ? value - 240 < 10
-                ? "0" + value - 240
-                : value - 240
-              : Math.floor(value / 60) === 5
-              ? value - 300 < 10
-                ? "0" + value - 300
-                : value - 300
-              : Math.floor(value / 60) === 6 && value - 360 < 10
-              ? "0" + value - 360
-              : value - 360}{" "}
+            {Math.floor(value - Math.floor(value / 60) * 60) < 10
+              ? "0" + Math.floor(value - Math.floor(value / 60) * 60)
+              : Math.floor(value - Math.floor(value / 60) * 60)}{" "}
             stundas
           </p>
         </div>

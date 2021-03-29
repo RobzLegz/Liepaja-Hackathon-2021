@@ -4,7 +4,12 @@ import styled from "styled-components";
 import LiepajaLogo from "../homepageresources/Liepajalogo.png";
 import AboutGame from "../popups/AboutGame";
 
-function StartingPage({ setAboutGameState, aboutGameState }) {
+function StartingPage({
+  setAboutGameState,
+  aboutGameState,
+  setTutorialPopupState,
+  tutorialPopupState,
+}) {
   const history = useHistory();
 
   return (
