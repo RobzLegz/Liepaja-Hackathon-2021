@@ -1,0 +1,24 @@
+{
+    "startpos": [
+        {
+            "id": 0,
+            "name": "Liepājas universitāte",
+            "coords": [56.50877878492316, 21.008842914236542]
+        },
+        {
+            "id": 1,
+            "name": "Liepājas autoosta",
+            "coords": [56.524270573711945, 21.01767711423698]
+        },
+        {
+            "id": 2,
+            "name": "Piemineklis Latvijas armijas virsleitnantam Alfrēdam Klestrovam",
+            "coords": [56.536020939967116, 21.089744405391567]
+        },
+        {
+            "id": 3,
+            "name": "Dienvidu robeža",
+            "coords": [56.480732381281676, 21.01113139870297]
+        }
+    ]
+}

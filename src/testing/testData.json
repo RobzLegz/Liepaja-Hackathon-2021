@@ -1,0 +1,18 @@
+{
+    "objects": [
+        {
+            "id": 0,
+            "name": "Ikšķiles Stacija",
+            "image": "https://lh3.googleusercontent.com/proxy/xIigkZYsTnIrrMKdiB17EqynsztPMypwJBYR-SQ_ns-dqxExl1dQKd5UZcK9cFTARuZ9PUm_ronyvlSTNarpAeKrPj2_-kUzT6N2bNHuUQjYh90V_Q",
+            "description": "Celta 19.gs.50.gados. Stacijas ēka bijusi celta pēc tā laika labākajiem būves principiem - plaša ēka, ar lielu pulksteni ārpusē, tējas bufeti, masīviem ozola koka soliem uzgaidāmajā zālē, nedaudz tālāk no stacijas - ūdenstornis un sūknis, jo tolaik lokomotīves darbina tvaika spēks. Stacijas ēku vienmēr pārkrāso, atjauno un tāda tā nodzīvo līdz Otrajam pasaules karam. Tad vācieši atkāpjoties staciju un sliedes uzspridzina un nodedzina.",
+            "coords": [56.95084094905678, 24.14704069890543],
+            "question1": "Kuros 19.gs. gados tika celta šī stacija?",
+            "answers1": ["30", "40", "50"],
+            "correct1": "50",
+            "question2": "Kas uzspridzināja dzelzceļa staciju?",
+            "answers2": ["Krievi", "Vācieši", "Latgalieši"],
+            "correct2": "Vācieši",
+            "extraImages": ["https://www.redzet.eu/images/large/7/44/V-520-12.jpg", "https://upload.wikimedia.org/wikipedia/lv/thumb/f/f1/Ik%C5%A1%C4%B7iles_dzelzce%C4%BCa_stacija_1914.jpeg/270px-Ik%C5%A1%C4%B7iles_dzelzce%C4%BCa_stacija_1914.jpeg"]
+        }
+    ]
+}
