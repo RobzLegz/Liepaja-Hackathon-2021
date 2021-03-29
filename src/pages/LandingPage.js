@@ -55,15 +55,19 @@ function LandingPage({
         >
           {gameStarted ? "Turpināt" : "Sākt spēli"}
         </Button>
+
         <p id="noteikumi__button" onClick={() => setRulePopupState(true)}>
           Spēles noteikumi
         </p>
         {rulePopupState && (
           <Regulations setRulePopupState={setRulePopupState} />
         )}
-        <p id="noteikumi__button" onClick={() => setRulePopupState(true)}>
-          Aplikācijas Instrukcija
-        </p>
+        {gameStarted && (
+          <p id="noteikumi__button" onClick={() => setRulePopupState(true)}>
+            Aplikācijas Instrukcija
+          </p>
+        )}
+
         {!showModal && (
           <>
             {!gameStarted && (
@@ -164,9 +168,11 @@ function LandingPage({
                 </div>
               </>
             )}
-            <p id="help" onClick={openModal}>
-              Palīdzība
-            </p>
+            {!gameStarted && (
+              <p id="help" onClick={openModal}>
+                Palīdzība
+              </p>
+            )}
           </>
         )}
 
