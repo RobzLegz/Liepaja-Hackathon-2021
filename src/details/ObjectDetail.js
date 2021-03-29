@@ -200,7 +200,8 @@ const InfoPopup = styled.div`
   height: fit-content;
   max-height: 500px;
   position: absolute;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
   z-index: 100;
   top: 50%;
   left: 50%;

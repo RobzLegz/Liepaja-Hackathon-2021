@@ -92,7 +92,7 @@ function LandingPage({
                     }
                   >
                     <img
-                      src="https://media.discordapp.net/attachments/819223674091339836/823197044776108072/liepaja1.jpg"
+                      src="https://media.discordapp.net/attachments/819223674091339836/823197046269673552/Liepaja2.png"
                       alt="info"
                     />
                     <p>
@@ -125,7 +125,7 @@ function LandingPage({
                     }
                   >
                     <img
-                      src="https://media.discordapp.net/attachments/819223674091339836/823197046269673552/Liepaja2.png"
+                      src="https://media.discordapp.net/attachments/819223674091339836/823197044776108072/liepaja1.jpg"
                       alt="info"
                     />
                     <p>
@@ -140,7 +140,7 @@ function LandingPage({
                     </p>
                   </div>
                 </div>
-                <div className="jaunumi" id="jaunumi3">
+                {/* <div className="jaunumi" id="jaunumi3">
                   <div
                     className="news__opener"
                     onClick={() => setThirdNewsState(!thirdnewsState)}
@@ -170,7 +170,7 @@ function LandingPage({
                       interesenti.{" "}
                     </p>
                   </div>
-                </div>
+                </div> */}
               </>
             )}
             {!gameStarted && (

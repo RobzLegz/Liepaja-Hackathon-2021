@@ -4,9 +4,9 @@ import styled from "styled-components";
 import { selectUser } from "../features/userSlice";
 import db from "../private/firebase";
 import StartImage from "./start.png";
-import * as objectData from "../testing/testData.json";
+import * as objectData from "../data/data.json";
 
-function StartGamePopup({ setStartGamePopup }) {
+function StartGamePopup({ setStartGamePopup, userInfo }) {
   const user = useSelector(selectUser);
 
   return (
@@ -20,23 +20,43 @@ function StartGamePopup({ setStartGamePopup }) {
               startFlagged: true,
               startTime: new Date().getTime(),
             });
-            objectData.objects.map((object) => {
-              db.collection("users").doc(user.uid).collection("objects").add({
-                lat: object.coords[0],
-                lng: object.coords[1],
-                name: object.name,
-                image: object.image,
-                description: object.description,
-                isFound: false,
-                question1: object.question1,
-                answers1: object.answers1,
-                correct1: object.correct1,
-                question2: object.question2,
-                answers2: object.answers2,
-                correct2: object.correct2,
-                extraImages: object.extraImages,
+            if (userInfo.hasPlayedBefore === true) {
+              objectData.objects.map((object) => {
+                db.collection("users").doc(user.uid).collection("objects").add({
+                  lat: object.coords[0],
+                  lng: object.coords[1],
+                  name: object.name,
+                  image: object.image,
+                  description: object.description,
+                  isFound: false,
+                  question1: object.question3,
+                  answers1: object.answers3,
+                  correct1: object.correct3,
+                  question2: object.question4,
+                  answers2: object.answers4,
+                  correct2: object.correct4,
+                  extraImages: object.extraImages,
+                });
               });
-            });
+            } else {
+              objectData.objects.map((object) => {
+                db.collection("users").doc(user.uid).collection("objects").add({
+                  lat: object.coords[0],
+                  lng: object.coords[1],
+                  name: object.name,
+                  image: object.image,
+                  description: object.description,
+                  isFound: false,
+                  question1: object.question1,
+                  answers1: object.answers1,
+                  correct1: object.correct1,
+                  question2: object.question2,
+                  answers2: object.answers2,
+                  correct2: object.correct2,
+                  extraImages: object.extraImages,
+                });
+              });
+            }
             setTimeout(() => {
               window.location.reload();
             }, 2000);

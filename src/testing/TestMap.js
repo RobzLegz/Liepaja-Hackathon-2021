@@ -89,7 +89,7 @@ function TestMap({
           {isLoaded && (
             <StyledMap
               mapContainerStyle={containerStyle}
-              center={userCoords}
+              center={testCenter}
               zoom={16}
               options={{ styles: mapStyles }}
               onClick={() => {
@@ -99,6 +99,46 @@ function TestMap({
                 setInfoPopupState(false);
               }}
             >
+              {objects.map((object) => (
+                <Marker
+                  key={object.name}
+                  id={object.id}
+                  position={{
+                    lat: object.lat,
+                    lng: object.lng,
+                  }}
+                  icon={{
+                    url: `${
+                      object.isFound === false
+                        ? "https://image.flaticon.com/icons/png/512/395/395841.png"
+                        : "https://upload.wikimedia.org/wikipedia/commons/b/bd/Gray_flag_waving.png"
+                    }`,
+                    scaledSize: new window.google.maps.Size(30, 30),
+                  }}
+                  onClick={() => {
+                    setObjectImage(object.image);
+                    setObjectId(object.objectId);
+                    setObjectName(object.name);
+                    setObjectDescription(object.description);
+                    setXtraObjectImages(object.extraImages);
+                    setAllObject({
+                      question1: object.question1,
+                      correct1: object.correct1,
+                      question2: object.question2,
+                      answers2: object.answers2,
+                      correct2: object.correct2,
+                    });
+                    setAllAnswers(object.answers1);
+                    setAllChanceAnswers(object.answers2);
+                    if (object.isFound === false) {
+                      setInfoPopupState(true);
+                      setAnsweredCorrect(false);
+                    } else {
+                      return;
+                    }
+                  }}
+                />
+              ))}
               <Marker
                 position={{
                   lat: userCoords.lat,
@@ -154,6 +194,7 @@ function TestMap({
               )}
               {startGamePopup && user && (
                 <StartGamePopup
+                  userInfo={userInfo}
                   setUserId={setUserId}
                   userId={userId}
                   user={user}
