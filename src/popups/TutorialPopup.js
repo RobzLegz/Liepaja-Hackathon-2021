@@ -9,7 +9,7 @@ function TutorialPopup({ setTutorialPopupState }) {
         <iframe
           width="100%"
           height="300"
-          src="https://www.youtube.com/embed/f1aSiWMUkAE"
+          src="https://www.youtube.com/watch?v=vF2bmb_M6xo"
           title="Instrukcija"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
