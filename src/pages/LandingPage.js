@@ -23,7 +23,7 @@ function LandingPage({
   const [showModal, setShowModal] = useState(false);
   const [firstnewsState, setFirstNewsState] = useState(false);
   const [secondNewsState, setSecondNewsState] = useState(false);
-  const [thirdnewsState, setThirdNewsState] = useState(false);
+  //const [thirdnewsState, setThirdNewsState] = useState(false);
   const history = useHistory();
   const user = useSelector(selectUser);
 
@@ -35,7 +35,7 @@ function LandingPage({
     <>
       <StyledLandingPage>
         <h1 id="virsraksts1">Orientēšanās spēle</h1>
-        {!startFlagged && (
+        {gameStarted && !startFlagged && (
           <h5 className="bababoi">
             Lai sāktu spēli aizejat līdz start karodziņam
           </h5>
