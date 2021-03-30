@@ -314,7 +314,6 @@ const StyledLoginForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: "Open Sans", sans-serif;
   position: absolute;
   top: 47%;
   left: 50%;
@@ -402,17 +401,25 @@ const StyledLoginForm = styled.form`
     top: 50px;
   }
 
-  > button {
+  @media (max-height: 682px) {
+    top: 40%;
+    > button {
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+  }
+  button {
     width: 150px;
     height: 45px;
     margin: 20px 0;
     border-radius: 40px;
     border: none;
-    color: #ffff;
+    color: #f5f5f5;
     font-size: 1.3rem;
     cursor: pointer;
     outline: none;
-    background-image: linear-gradient(315deg, #f85032 0%, #e73827 74%);
+    background-color: #f71735;
+    background-image: linear-gradient(147deg, #f71735 0%, #db3445 74%);
     -webkit-transform: perspective(1px) translateZ(0);
     transform: perspective(1px) translateZ(0);
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
@@ -425,18 +432,8 @@ const StyledLoginForm = styled.form`
     transition: all 0.5s ease-out;
 
     :hover {
-      background-color: #990000;
-      background-image: linear-gradient(147deg, #990000 0%, #ff0000 74%);
       -webkit-transform: scale(1.06);
       transform: scale(1.06);
-    }
-  }
-
-  @media (max-height: 569px) {
-    top: 46%;
-    > button {
-      margin-top: -10px;
-      margin-bottom: 10px;
     }
   }
 
@@ -450,6 +447,7 @@ const StyledLoginForm = styled.form`
   > h1 {
     margin-bottom: 35px;
     color: #2f2f2f;
+    font-family: "Roboto", sans-serif;
   }
 `;
 
