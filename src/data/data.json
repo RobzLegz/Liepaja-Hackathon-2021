@@ -15,9 +15,9 @@
             "question3": "Cik liela ir bākas redzamība jūras jūdzēs?",
             "answers3": ["25", "16", "10"],
             "correct3": "16",
-            "question4": "Cik Otrā pasaules kara laikā šāviņi tika trāpīti bākā?",
-            "answers4": ["7", "0", "14"],
-            "correct4": "0",
+            "question4": "Cik šāviņi Pirmā pasaules kara laikā tika trāpīti bākas tornī?",
+            "answers4": ["7", "25", "16"],
+            "correct4": "16",
             "extraImages": ["https://images-ext-1.discordapp.net/external/6mxPsgtSBT829kX79l17mT3eW1GpOn4JJ-6TTBP1dE4/https/upload.wikimedia.org/wikipedia/commons/thumb/7/71/Liepaja_lighthouse.JPG/1200px-Liepaja_lighthouse.JPG?width=635&height=847", "https://images-ext-1.discordapp.net/external/9B5JgWuVWzpZhbAQ0QRkbydq2MukoFBHUcmEgDJ8qWA/https/liepaja-sez.lv/uploads/gallery/majorImage/5d00f6820d85a.JPG?width=500&height=284"]
         },
         {
@@ -172,12 +172,12 @@
             "question2": "Cik garš ir šis mols?",
             "answers2": ["200 m", "650 m", "700 m"],
             "correct2": "700 m",
-            "question3": "Pēc kura inženiera projekta tika veidots mols?",
-            "answers3": ["A. Urbahs", "M. Šistovskis", "G. Grūbe"],
-            "correct3": "M. Šistovskis”",
-            "question4": "Kāds ir nosaukums govs skulptūrai, kura ir sastopama molā?",
-            "answers4": ["“Jūras govs”", "“Zilā govs”", "“Govs-Matrozis”"],
-            "correct4": "“Govs-Matrozis”",
+            "question3": "Kurā pilsētā vēl ir Dienvidu mols?",
+            "answers3": ["Ventspilī", "Salaspilī", "Jūrmalā"],
+            "correct3": "Ventspilī",
+            "question4": "Kāds mols nav Liepājā?",
+            "answers4": ["Dienvidu", "Ziemeļu", "Austrumu"],
+            "correct4": "Austrumu",
             "extraImages": ["https://pbs.twimg.com/media/D161C8yW0AA8581.jpg:large", "https://www.ventasbalss.lv/upload/news/36836/715x715_94f426e0f4973826b4294b7bb0e29df8.jpg"]
         },
         {
@@ -418,7 +418,7 @@
             "question4": "Kas no minētā neatrodas šajā namā?",
             "answers4": ["Liepājas leļļu teātris", "”ZIIC”", "Baleta zāle"],
             "correct4": "”ZIIC”",
-            "extraImages": ["http://photos.wikimapia.org/p/00/02/37/67/81_big.jpg", "http://i.vietas.lv/userfiles/image_gal/big/23/image-523.jpg"]
+            "extraImages": ["http://photos.wikimapia.org/p/00/02/37/67/81_big.jpg", "https://biedribasnams.lv/wp-content/uploads/2020/05/telpu-noma1-min-768x499.jpg"]
         },
         {
             "id": 21,
