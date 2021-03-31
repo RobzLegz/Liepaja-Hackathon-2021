@@ -7,7 +7,7 @@ import {
 } from "@react-google-maps/api";
 import { API_KEY } from "../private/api";
 import styled from "styled-components";
-import * as startingPoints from "./testStartingPoints.json";
+import * as startingPoints from "../data/startingPoints.json";
 import ObjectDetail from "../details/ObjectDetail";
 import { mapStyles } from "../styles/mapStyles";
 import StartGamePopup from "../popups/StartGamePopup";
