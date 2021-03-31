@@ -8,7 +8,6 @@ function TutorialPopup({ setTutorialPopupState }) {
       <CancelIcon onClick={() => setTutorialPopupState(false)} />
       <h3>Spēles instrukcija</h3>
       <hr />
-
       <iframe
         width="560"
         height="315"
