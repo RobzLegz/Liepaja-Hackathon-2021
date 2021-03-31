@@ -1,21 +1,23 @@
 import React from "react";
 import styled from "styled-components";
-import CancelIcon from '@material-ui/icons/Cancel';
+import CancelIcon from "@material-ui/icons/Cancel";
 
 function TutorialPopup({ setTutorialPopupState }) {
   return (
     <StyledTutorialPopup>
-        <CancelIcon onClick={() => setTutorialPopupState(false)} />
+      <CancelIcon onClick={() => setTutorialPopupState(false)} />
       <h3>Spēles instrukcija</h3>
-        <hr/>
+      <hr />
 
-              <iframe
-                  width="560"
-                  height="315"
-                  src="https://www.youtube.com/embed/vF2bmb_M6xo" title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen/>
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/vF2bmb_M6xo"
+        title="YouTube video player"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      />
     </StyledTutorialPopup>
   );
 }
@@ -69,11 +71,11 @@ const StyledTutorialPopup = styled.div`
     max-height: 720px;
     min-width: 320px;
     min-height: 180px;
-    box-shadow: 0 10px 40px rgba(159, 162, 177, .8);
+    box-shadow: 0 10px 40px rgba(159, 162, 177, 0.8);
     border: 5px solid #a4a4a4;
   }
   @media (min-height: 871px) {
-    iframe{
+    iframe {
       height: 70%;
     }
   }
