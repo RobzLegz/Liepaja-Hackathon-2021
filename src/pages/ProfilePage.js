@@ -8,6 +8,9 @@ import ProfileImage from "../resources/profileimage.svg";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import { useHistory } from "react-router";
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import TextFieldsIcon from "@material-ui/icons/TextFields";
+import FaceIcon from "@material-ui/icons/Face";
 
 function ProfilePage({ name, email, userInfo }) {
   const [changeNamePopupState, setChangeNamePopupState] = useState(false);
@@ -19,14 +22,15 @@ function ProfilePage({ name, email, userInfo }) {
 
   const changeName = (e) => {
     e?.preventDefault();
-    db.collection("users").doc(user.uid).update({
-      name: nameChangeValue,
-    });
-    setNameChangeValue("");
-    setChangeNamePopupState(false);
-    setInterval(() => {
-      window.location.reload();
-    }, 1000);
+    if (nameChangeValue !== "") {
+      db.collection("users").doc(user.uid).update({
+        name: nameChangeValue,
+      });
+      setNameChangeValue("");
+      setChangeNamePopupState(false);
+    } else {
+      return;
+    }
   };
 
   return (
@@ -35,11 +39,12 @@ function ProfilePage({ name, email, userInfo }) {
         <div id="header">
           <img
             src={userInfo.selectedFace ? userInfo.selectedFace : ProfileImage}
-            alt={userInfo.name}
+            alt="profile"
           />
+          <h1>{name}</h1>
+          <h2>{email}</h2>
         </div>
-        <h1>{name}</h1>
-        <h2>{email}</h2>
+
         <div id="info">
           <div
             className="profile__button--container"
@@ -47,8 +52,9 @@ function ProfilePage({ name, email, userInfo }) {
               history.push("/avatar");
             }}
           >
+            <FaceIcon className="icons" />
             <p>Nomainīt avatāru</p>
-            <ArrowForwardIosIcon />
+            <ArrowForwardIosIcon id="arrow" />
           </div>
           <div
             className="profile__button--container"
@@ -56,23 +62,27 @@ function ProfilePage({ name, email, userInfo }) {
               setChangeNamePopupState(true);
             }}
           >
+            <TextFieldsIcon className="icons" />
             <p>Nomainīt Vārdu, Uzvārdu</p>
-            <ArrowForwardIosIcon />
+            <ArrowForwardIosIcon id="arrow" />
           </div>
           <div
             className="profile__button--container"
+            id="last_div"
             onClick={() => {
               dispatch(logout());
               auth.signOut();
-              setTimeout(() => {
-                window.location.reload();
-              }, 1000);
             }}
           >
+            <ExitToAppIcon className="icons" />
             <p className="iziet">Iziet</p>
             <ArrowForwardIosIcon className="iziet" />
           </div>
         </div>
+        {/* <div id="versija">
+          <p>V.1.01 </p>
+          <p>Team Datorium</p>
+        </div> */}
       </StyledProfilePage>
       <Nav />
       {changeNamePopupState && (
@@ -85,15 +95,17 @@ function ProfilePage({ name, email, userInfo }) {
               onChange={(e) => setNameChangeValue(e.target.value)}
             />
             <CheckCircleIcon
-              onClick={() => {
+              onClick={(e) => {
                 changeName();
+                window.location.reload();
               }}
             />
             <button
-              onClick={() => {
+              onClick={(e) => {
                 changeName();
+                window.location.reload();
               }}
-            ></button>
+            />
           </form>
           <button
             onClick={() => {
@@ -120,36 +132,46 @@ const StyledProfilePage = styled.div`
 
   #header {
     width: 100%;
-    height: 100px;
-    border-radius: 0 0 50% 50%/0 0 100% 100%;
-    transform: scaleX(1.2);
-    background: darkred;
+    height: 250px;
+    background: linear-gradient(#ed213a, #93291e);
+    flex-direction: column;
   }
 
   #header > img {
     height: 100px;
     max-width: 100px;
-    margin: 46px 50%;
+    margin: 25px 50%;
     transform: translateX(-50%);
     border-radius: 50%;
     object-fit: cover;
+    border: 3.5px solid #ddd4d4;
+    background-color: white;
   }
 
-  > h1 {
-    font-family: "Merriweather Sans", sans-serif;
-    margin: 75px auto;
-    color: #333;
+  #header > h1 {
+    color: #f3f3f3;
     text-align: center;
+    margin-bottom: 10px;
+    margin-top: -15px;
+    font-weight: 400;
   }
-  > h2 {
-    font-family: "Merriweather Sans", sans-serif;
+
+  #header > h2 {
     display: block;
-    font-style: italic;
-    margin: -60px auto;
-    color: #3f3f3f;
+    color: #f5f5f5;
+    text-align: center;
+    font-weight: 10;
+    margin-bottom: 15px;
   }
+
+  .icons {
+    color: black;
+    height: 25px;
+    width: 25px;
+    margin-left: -10px;
+  }
+
   #info {
-    margin-top: 130px;
     width: 100%;
     border-top: 1px solid lightgray;
     > .profile__button--container {
@@ -159,22 +181,49 @@ const StyledProfilePage = styled.div`
       padding: 0 20px;
       font-size: 16px;
       align-items: center;
-      height: 40px;
-      border-bottom: 1px solid lightgray;
+      height: 50px;
       cursor: pointer;
-      > .MuiSvgIcon-root {
+      background-color: white;
+      border-bottom: 1px solid lightgray;
+      > #arrow {
         font-size: 17px;
+        color: #b5b4b4;
       }
+
       > .iziet {
+        font-size: 17px;
         color: #e41b1b;
       }
+
       > p {
-        vertical-align: center;
         cursor: pointer;
         font-family: "Merriweather Sans", sans-serif;
         color: #414141;
+        font-weight: bold;
+        display: block;
+        margin-right: auto;
+        margin-left: 15px;
       }
     }
+    #last_div {
+      border-bottom: 1px solid lightgray;
+    }
+  }
+
+  @media (max-height: 633px) {
+    #info {
+      margin-top: 50px;
+    }
+    #info > .profile__button--container {
+      height: 40px;
+    }
+  }
+
+  #versija {
+    color: #b5b4b4;
+    text-align: center;
+    display: block;
+    margin: auto auto 10px auto;
   }
 `;
 
@@ -185,8 +234,7 @@ const StyledNameChangePopup = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   background: #fbfbfb;
-  height: 200px;
-  min-height: 200px;
+  height: 30%;
   width: 80%;
   padding: 1.5rem;
   display: flex;
